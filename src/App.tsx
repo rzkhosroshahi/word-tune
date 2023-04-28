@@ -3,7 +3,7 @@ import Paraphrase from './components/Paraphrase'
 
 function App () {
   return (
-    <section className="flex h-[100vh] align-middle justify-center p-8 bg-gradient-to-r from-slate-200 to-slate-300">
+    <section className="flex h-full align-middle justify-center pb-8 pr-8 pl-8 pb-4">
       <Paraphrase />
     </section>
   )

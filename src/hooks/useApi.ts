@@ -6,15 +6,14 @@ import { config } from '../config'
  * ReactHook to make api calls
  * @param {string} endpoint - endpoint string
  * @param {Object} options - fetch api options
- * @param {Object} body - object data for api calls
  */
-export function useApi<TResponse> (endpoint: string, options?: Partial<Request>, body: Object = {}) {
+export function useApi<TResponse> (endpoint: string, options?: Partial<Request>) {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [error, setError] = useState(null)
   const [retryCount, setRetryCount] = useState<number>(0)
   const [data, setData] = useState<TResponse | null>()
 
-  const fetchApi = useCallback(() => {
+  const fetchApi = useCallback((body: Object = {}) => {
     setIsLoading(true)
     setError(null)
     httpRequest<TResponse>(`${config.baseUrl}/${endpoint}`, options, body)
