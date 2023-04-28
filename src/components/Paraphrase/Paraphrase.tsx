@@ -1,4 +1,5 @@
 import React, { FormEvent, useRef, useState } from 'react'
+import { ClipboardIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useApi } from '../../hooks/useApi'
 import StyleText from '../StyleText'
 import { TextStylesNames } from '../StyleText/StyleText.types'
@@ -29,6 +30,20 @@ function Paraphrase () {
       })
     }
   }
+  const handleClearText = () => {
+    if (textArea.current) {
+      textArea.current.value = ''
+    }
+  }
+  const handlePasteText = async () => {
+    if (!textArea.current) {
+      return
+    }
+    const text = await navigator.clipboard.readText()
+    if (text) {
+      textArea.current.value = text
+    }
+  }
   return (
     <>
       <div className="w-full flex flex-col pt-8">
@@ -36,17 +51,34 @@ function Paraphrase () {
           Paraphrase
         </h1>
         <form action="" onSubmit={handleSubmitForm}>
-          <textarea
-            ref={textArea}
-            className="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0 rounded-lg outline outline-transparent focus:outline-violet-800"
-            rows={5}
-            placeholder="write down your text and paraphrase"
-          />
+          <div
+            className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left focus:outline-none focus-visible:bg-violet-400 outline-violet-800"
+          >
+            <div
+              className="absolute top-2 right-1 flex align-middle justify-center bg-white shadow w-[32px] h-[32px] rounded"
+              onClick={handlePasteText}
+            >
+              <ClipboardIcon width={18} />
+            </div>
+            <div
+              className="absolute top-[48px] right-1 flex align-middle justify-center bg-white shadow w-[32px] h-[32px] rounded"
+              onClick={handleClearText}
+            >
+              <XMarkIcon width={18} />
+            </div>
+            <textarea
+              ref={textArea}
+              className="w-full border-none py-2 pl-3 pr-10 pt-4 text-sm leading-5 text-gray-900 outline-0 bg-transparent text-base resize-none"
+              rows={6}
+              placeholder="write down your text and paraphrase"
+            />
+          </div>
+
           <StyleText selected={style} onSelect={handleSelectTextStyle} />
           <button
             type="submit"
             disabled={loading}
-            className="w-full flex align-middle justify-center outline-0 border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0 rounded-lg bg-violet-800 rounded-md text-white"
+            className="w-[100%] flex align-middle justify-center outline-0 border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0 rounded-lg bg-violet-800 rounded-md text-white"
           >
             {
               loading

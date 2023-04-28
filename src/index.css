@@ -40,6 +40,5 @@ code {
   textarea:focus,
   input:focus {
     font-size: 16px;
-    background: #eee;
   }
 }
