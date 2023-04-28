@@ -24,6 +24,9 @@ export const StyleText = ({ selected, onSelect }: StyleTextProps) => {
               key={key}
               title={key}
               className={getClassNames(selected === key)}
+              style={{
+                backgroundColor: selected === key ? '#ede9fe' : ''
+              }}
               onClick={() => onSelect(key)}
             >
               <IconComponent width={20} />
@@ -39,7 +42,7 @@ function getClassNames (selected: boolean) {
   return clsx({
     'w-[100px] p-2 flex align-middle justify-center text-xs bg-white rounded border border-transparent transition-all text-zinc-800': true,
     'hover:text-violet-800': true,
-    'text-violet-900 border-violet-800 bg-[#ede9fe]': selected
+    'text-violet-900 border-violet-800': selected
   })
 }
 

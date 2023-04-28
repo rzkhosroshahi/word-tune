@@ -42,3 +42,9 @@ code {
     font-size: 16px;
   }
 }
+
+@layer components {
+  .textarea-container:has(textarea:focus) {
+    @apply border-violet-800
+  }
+}

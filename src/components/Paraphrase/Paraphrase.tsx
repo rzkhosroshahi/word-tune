@@ -52,20 +52,22 @@ function Paraphrase () {
         </h1>
         <form action="" onSubmit={handleSubmitForm}>
           <div
-            className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left focus:outline-none focus-visible:bg-violet-400 outline-violet-800"
+            className="textarea-container relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left focus-visible:bg-violet-400 border-2 border-transparent"
           >
-            <div
-              className="absolute top-2 right-1 flex align-middle justify-center bg-white shadow w-[32px] h-[32px] rounded"
+            <span
+              className="absolute top-2 right-1 flex align-middle justify-center bg-white shadow w-[32px] h-[32px] rounded cursor-pointer"
+              title="paste"
               onClick={handlePasteText}
             >
               <ClipboardIcon width={18} />
-            </div>
-            <div
-              className="absolute top-[48px] right-1 flex align-middle justify-center bg-white shadow w-[32px] h-[32px] rounded"
+            </span>
+            <span
+              className="absolute top-[48px] right-1 flex align-middle justify-center bg-white shadow w-[32px] h-[32px] rounded cursor-pointer"
+              title="clear"
               onClick={handleClearText}
             >
               <XMarkIcon width={18} />
-            </div>
+            </span>
             <textarea
               ref={textArea}
               className="w-full border-none py-2 pl-3 pr-10 pt-4 text-sm leading-5 text-gray-900 outline-0 bg-transparent text-base resize-none"
