@@ -22,6 +22,7 @@ export const StyleText = ({ selected, onSelect }: StyleTextProps) => {
           return (
             <button
               key={key}
+              type="button"
               title={key}
               className={getClassNames(selected === key)}
               style={{

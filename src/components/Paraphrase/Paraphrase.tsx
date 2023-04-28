@@ -22,8 +22,8 @@ function Paraphrase () {
     }
   }
   const handleSelectTextStyle = (style: TextStylesNames) => {
-    if (textArea.current) {
-      setStyle(style)
+    setStyle(style)
+    if (textArea.current && textArea.current.value) {
       fetchApi({
         style,
         text: textArea.current.value
