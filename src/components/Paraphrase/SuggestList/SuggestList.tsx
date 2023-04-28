@@ -19,13 +19,13 @@ export const SuggestList = ({ loading, suggestions }: SuggestListProps) => {
         suggestions
           ? (
               suggestions.map((suggest) => (
-              <div
-                key={suggest.text}
-                className={getSuggestionClass(loading)}
-                onClick={() => handleCopyTex(suggest.text)}
-              >
-                {suggest.text}
-              </div>
+                <div
+                  key={suggest.text}
+                  className={getSuggestionClass(loading)}
+                  onClick={() => handleCopyTex(suggest.text)}
+                >
+                  {suggest.text}
+                </div>
               ))
             )
           : null

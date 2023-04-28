@@ -92,7 +92,7 @@ function Paraphrase () {
           error === null
             ? <SuggestList loading={loading} suggestions={data?.suggestions} />
             : (
-              <div>
+              <div className="text-red-500">
                 something is wrong {JSON.stringify(error)}
               </div>
               )
