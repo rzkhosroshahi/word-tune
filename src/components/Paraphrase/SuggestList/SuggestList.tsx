@@ -1,4 +1,5 @@
 import React from 'react'
+import toast from 'react-hot-toast'
 import clsx from 'clsx'
 import { SuggestListProps } from './SuggestList.types'
 import useCopyToClipboard from '../../../hooks/useCopyToClipboard'
@@ -6,6 +7,12 @@ import useCopyToClipboard from '../../../hooks/useCopyToClipboard'
 export const SuggestList = ({ loading, suggestions }: SuggestListProps) => {
   const [copy] = useCopyToClipboard()
 
+  const handleCopyTex = (text: string) => {
+    copy(text)
+      .then(() => {
+        toast('Text Copied!')
+      })
+  }
   return (
     <div className="flex flex-col gap-3 mt-4">
       {
@@ -15,7 +22,7 @@ export const SuggestList = ({ loading, suggestions }: SuggestListProps) => {
               <div
                 key={suggest.text}
                 className={getSuggestionClass(loading)}
-                onClick={() => copy(suggest.text)}
+                onClick={() => handleCopyTex(suggest.text)}
               >
                 {suggest.text}
               </div>
