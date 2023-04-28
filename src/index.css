@@ -34,3 +34,12 @@ code {
 .animation-slide-out-in {
   animation: slide-out-in 1s infinite;;
 }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  select:focus,
+  textarea:focus,
+  input:focus {
+    font-size: 16px;
+    background: #eee;
+  }
+}
