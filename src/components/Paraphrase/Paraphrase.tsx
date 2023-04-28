@@ -46,7 +46,7 @@ function Paraphrase () {
   }
   return (
     <>
-      <div className="w-full flex flex-col pt-8">
+      <div className="w-full md:w-auto flex flex-col pt-8">
         <h1 className="pb-4 text-xl font-medium text-violet-950">
           Paraphrase
         </h1>
