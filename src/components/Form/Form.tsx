@@ -137,6 +137,7 @@ export const Form = (props: FormProps) => {
           className="w-full border-none py-2 pl-3 pr-10 pt-4 text-sm leading-5 text-gray-900 dark:text-slate-400 outline-0 bg-transparent text-base resize-none dark:bg-slate-800"
           rows={15}
           placeholder="write down your text and paraphrase"
+          inputMode={splitText.length ? 'none' : 'text' }
         />
       </div>
 
