@@ -35,7 +35,7 @@ function Paraphrase () {
           Paraphrase
         </h1>
         <div className="flex mb-2 self-end items-center">
-          <label className="Label text-xs font-bold pr-2 text-violet-950 dark:text-slate-800" htmlFor="sentence-mode">
+          <label className="Label text-xs pr-2 text-violet-950 dark:text-slate-950" htmlFor="sentence-mode">
             Sentence mode
           </label>
           <Switch.Root
