@@ -46,4 +46,10 @@ code {
   .textarea-container:has(textarea:focus) {
     @apply border-violet-800 dark:border-slate-500
   }
+  .switch-root:has([data-state=checked]) {
+    @apply bg-slate-500 dark:bg-slate-800
+  }
+  .switch-root:has([data-state=checked]) .switch-thumb {
+    @apply translate-x-[19px]
+  }
 }

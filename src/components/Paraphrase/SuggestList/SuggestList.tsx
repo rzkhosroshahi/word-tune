@@ -4,10 +4,15 @@ import clsx from 'clsx'
 import { SuggestListProps } from './SuggestList.types'
 import useCopyToClipboard from '../../../hooks/useCopyToClipboard'
 
-export const SuggestList = ({ loading, suggestions, onClear }: SuggestListProps) => {
+export const SuggestList = (props: SuggestListProps) => {
+  const { loading, suggestions, onClear, onClick, sentenceMode } = props
   const [copy] = useCopyToClipboard()
 
-  const handleCopyTex = (text: string) => {
+  const handleClickOnText = (text: string) => {
+    if (sentenceMode) {
+      onClick(text)
+      return
+    }
     copy(text)
       .then(() => {
         toast('Text Copied!')
@@ -27,7 +32,7 @@ export const SuggestList = ({ loading, suggestions, onClear }: SuggestListProps)
                 <div
                   key={suggest.text}
                   className={getSuggestionClass(loading)}
-                  onClick={() => handleCopyTex(suggest.text)}
+                  onClick={() => handleClickOnText(suggest.text)}
                 >
                   {suggest.text}
                 </div>
