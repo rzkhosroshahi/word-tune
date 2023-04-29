@@ -52,7 +52,7 @@ export const SuggestList = (props: SuggestListProps) => {
 function getSuggestionClass (loading: boolean) {
   return clsx({
     'flex align-middle justify-between transition-all w-full p-2 rounded bg-white text-sm font-medium cursor-pointer select-none': true,
-    'text-zinc-800 dark:text-zinc-300 bg-white dark:bg-slate-700 active:bg-violet-200 dark:active:bg-slate-300': true,
+    'text-zinc-800 dark:text-zinc-300 bg-white dark:bg-slate-700 dark:active:bg-slate-800 active:bg-violet-200': true,
     'animate-pulse': loading
   })
 }
