@@ -46,7 +46,6 @@ export const Form = (props: FormProps) => {
   const handleSubmitInSentenceMode = () => {
     if (splitText.length) {
       selectTextInTextarea(splitText[index])
-      console.log('here >>')
       onSubmit(splitText[index], style)
       return
     }
@@ -97,7 +96,6 @@ export const Form = (props: FormProps) => {
     }
   }
   const resetAfterSentenceModeEnd = () => {
-    console.log('here >>')
     setIndex(0)
     setTextSplit([])
     props.onClear()
