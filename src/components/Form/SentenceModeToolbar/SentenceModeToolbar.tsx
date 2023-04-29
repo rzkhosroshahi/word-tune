@@ -22,7 +22,7 @@ export const SentenceModeToolbar = (props: SentenceModeToolbarProps) => {
         className="absolute top-2 right-1 flex align-middle justify-center bg-white shadow w-[32px] h-[32px] rounded cursor-pointer dark:bg-slate-500 dark:text-slate-300"
         title="next"
         style={{
-          opacity: disableNext ? '0.2' : '1'
+          opacity: disableNext ? '0.2' : '0.7'
         }}
         onClick={onNextClick}
       >
@@ -46,7 +46,7 @@ export const SentenceModeToolbar = (props: SentenceModeToolbarProps) => {
         className="absolute top-2 right-[42px] flex align-middle justify-center bg-white shadow w-[32px] h-[32px] rounded cursor-pointer dark:bg-slate-500 dark:text-slate-300"
         title="prev"
         style={{
-          opacity: disablePrev ? '0.2' : '1'
+          opacity: disablePrev ? '0.2' : '0.7'
         }}
         onClick={onPrevClick}
       >

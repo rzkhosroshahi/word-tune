@@ -30,12 +30,12 @@ function Paraphrase () {
   }
   return (
     <>
-      <div className="w-full md:w-auto flex flex-col pt-8">
+      <div className="flex w-full md:max-w-[760px] flex-col pt-8">
         <h1 className="pb-4 text-xl font-medium text-violet-950 dark:text-slate-800">
           Paraphrase
         </h1>
         <div className="flex mb-2 self-end items-center">
-          <label className="Label text-xs font-bold pr-2 text-violet-950 ark:text-slate-900" htmlFor="sentence-mode">
+          <label className="Label text-xs font-bold pr-2 text-violet-950 dark:text-slate-800" htmlFor="sentence-mode">
             Sentence mode
           </label>
           <Switch.Root

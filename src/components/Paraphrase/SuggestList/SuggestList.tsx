@@ -22,7 +22,12 @@ export const SuggestList = (props: SuggestListProps) => {
     <div className="flex flex-col gap-3 mt-4">
       {
         suggestions
-          ? <span className="text-xs py-1 cursor-pointer select-none" onClick={onClear}>Clear</span>
+          ? <div className="flex justify-between items-center py-1 cursor-pointer select-none font-bold" onClick={onClear}>
+              <p>Suggestions</p>
+              <span className="text-xs cursor-pointer">
+                X Clear
+              </span>
+            </div>
           : null
       }
       {
@@ -46,7 +51,7 @@ export const SuggestList = (props: SuggestListProps) => {
 
 function getSuggestionClass (loading: boolean) {
   return clsx({
-    'flex align-middle justify-between transition-all w-full p-2 rounded bg-white text-xs font-medium cursor-pointer select-none text-zinc-800': true,
+    'flex align-middle justify-between transition-all w-full p-2 rounded bg-white text-sm font-medium cursor-pointer select-none text-zinc-800': true,
     'bg-white dark:bg-slate-400 active:bg-violet-200 dark:active:bg-slate-300': true,
     'animate-pulse': loading
   })
