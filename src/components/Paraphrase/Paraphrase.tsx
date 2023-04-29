@@ -10,7 +10,7 @@ import Spinner from '../Spinner'
 function Paraphrase () {
   const textArea = useRef<HTMLTextAreaElement>(null)
   const [style, setStyle] = useState<TextStylesNames>('general')
-  const { fetchApi, data, error, loading } = useApi<ParaphraseTypes>('paraphrase', { method: 'POST' })
+  const { fetchApi, data, setData, error, loading } = useApi<ParaphraseTypes>('paraphrase', { method: 'POST' })
 
   const handleSubmitForm = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -43,6 +43,10 @@ function Paraphrase () {
     if (text) {
       textArea.current.value = text
     }
+  }
+  const onClearSuggestions = () => {
+    setData(null)
+    handleClearText()
   }
   return (
     <>
@@ -92,7 +96,7 @@ function Paraphrase () {
         </form>
         {
           error === null
-            ? <SuggestList loading={loading} suggestions={data?.suggestions} />
+            ? <SuggestList loading={loading} suggestions={data?.suggestions} onClear={onClearSuggestions} />
             : (
               <div className="text-red-500">
                 something is wrong {JSON.stringify(error)}

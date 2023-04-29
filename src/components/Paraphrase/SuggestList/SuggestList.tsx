@@ -4,7 +4,7 @@ import clsx from 'clsx'
 import { SuggestListProps } from './SuggestList.types'
 import useCopyToClipboard from '../../../hooks/useCopyToClipboard'
 
-export const SuggestList = ({ loading, suggestions }: SuggestListProps) => {
+export const SuggestList = ({ loading, suggestions, onClear }: SuggestListProps) => {
   const [copy] = useCopyToClipboard()
 
   const handleCopyTex = (text: string) => {
@@ -15,6 +15,11 @@ export const SuggestList = ({ loading, suggestions }: SuggestListProps) => {
   }
   return (
     <div className="flex flex-col gap-3 mt-4">
+      {
+        suggestions
+          ? <span className="text-xs py-1" onClick={onClear}>Clear</span>
+          : null
+      }
       {
         suggestions
           ? (

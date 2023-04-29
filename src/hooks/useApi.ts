@@ -37,5 +37,5 @@ export function useApi<TResponse> (endpoint: string, options?: Partial<Request>)
   const retry = () => {
     setRetryCount(retryCount + 1)
   }
-  return { data, loading: isLoading, error, retry, retryCount, fetchApi }
+  return { data, loading: isLoading, error, retry, retryCount, fetchApi, setData }
 }
