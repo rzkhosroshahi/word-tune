@@ -2,7 +2,7 @@ import React from 'react'
 import clsx from 'clsx'
 import { StyleTextProps, TextStyles, TextStylesNames } from './StyleText.types'
 import { BriefcaseIcon, EyeDropperIcon, NewspaperIcon, SparklesIcon } from '@heroicons/react/24/outline'
-import { objectKeys } from '../../utils'
+import { objectKeys } from '../../../utils'
 
 type IconsTypes = React.ForwardRefExoticComponent<React.PropsWithoutRef<React.SVGProps<SVGSVGElement>>>;
 
