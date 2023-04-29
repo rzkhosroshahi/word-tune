@@ -47,22 +47,22 @@ function Paraphrase () {
   return (
     <>
       <div className="w-full md:w-auto flex flex-col pt-8">
-        <h1 className="pb-4 text-xl font-medium text-violet-950">
+        <h1 className="pb-4 text-xl font-medium text-violet-950 dark:text-slate-800">
           Paraphrase
         </h1>
         <form action="" onSubmit={handleSubmitForm}>
           <div
-            className="textarea-container relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left focus-visible:bg-violet-400 border-2 border-transparent"
+            className="textarea-container relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left focus-visible:bg-violet-400 border-2 border-transparent dark:bg-slate-800"
           >
             <span
-              className="absolute top-2 right-1 flex align-middle justify-center bg-white shadow w-[32px] h-[32px] rounded cursor-pointer"
+              className="absolute top-2 right-1 flex align-middle justify-center bg-white shadow w-[32px] h-[32px] rounded cursor-pointer dark:bg-slate-500 dark:text-slate-300"
               title="paste"
               onClick={handlePasteText}
             >
               <ClipboardIcon width={18} />
             </span>
             <span
-              className="absolute top-[48px] right-1 flex align-middle justify-center bg-white shadow w-[32px] h-[32px] rounded cursor-pointer"
+              className="absolute top-[48px] right-1 flex align-middle justify-center bg-white shadow w-[32px] h-[32px] rounded cursor-pointer dark:bg-slate-500 dark:text-slate-300"
               title="clear"
               onClick={handleClearText}
             >
@@ -70,7 +70,7 @@ function Paraphrase () {
             </span>
             <textarea
               ref={textArea}
-              className="w-full border-none py-2 pl-3 pr-10 pt-4 text-sm leading-5 text-gray-900 outline-0 bg-transparent text-base resize-none"
+              className="w-full border-none py-2 pl-3 pr-10 pt-4 text-sm leading-5 text-gray-900 dark:text-slate-400 outline-0 bg-transparent text-base resize-none dark:bg-slate-800"
               rows={6}
               placeholder="write down your text and paraphrase"
             />
@@ -80,7 +80,7 @@ function Paraphrase () {
           <button
             type="submit"
             disabled={loading}
-            className="w-[100%] flex align-middle justify-center outline-0 border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0 rounded-lg bg-violet-800 rounded-md text-white"
+            className="w-[100%] flex align-middle justify-center outline-0 border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0 rounded-lg bg-violet-800 rounded-md text-white dark:text-slate-300 dark:bg-slate-800"
           >
             {
               loading

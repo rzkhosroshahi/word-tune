@@ -4,7 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 
-html, body {
+html, body, #root {
   height: 100%;
 }
 body {
@@ -14,7 +14,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgba(0, 0, 0, 0) linear-gradient(to right, rgb(226, 232, 240), rgb(203, 213, 225)) repeat scroll 0% 0% / auto padding-box border-box;
 }
 
 code {
@@ -45,6 +44,6 @@ code {
 
 @layer components {
   .textarea-container:has(textarea:focus) {
-    @apply border-violet-800
+    @apply border-violet-800 dark:border-slate-500
   }
 }

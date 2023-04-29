@@ -36,7 +36,8 @@ export const SuggestList = ({ loading, suggestions }: SuggestListProps) => {
 
 function getSuggestionClass (loading: boolean) {
   return clsx({
-    'flex align-middle justify-between transition-all w-full p-2 rounded bg-white text-xs font-medium cursor-pointer select-none active:bg-violet-200 text-zinc-800': true,
+    'flex align-middle justify-between transition-all w-full p-2 rounded bg-white text-xs font-medium cursor-pointer select-none text-zinc-800': true,
+    'bg-white dark:bg-slate-400 active:bg-violet-200 dark:active:bg-slate-300': true,
     'animate-pulse': loading
   })
 }
