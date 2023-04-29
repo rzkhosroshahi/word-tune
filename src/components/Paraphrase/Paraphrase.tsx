@@ -24,8 +24,15 @@ function Paraphrase () {
         <h1 className="pb-4 text-xl font-medium text-violet-950 dark:text-slate-800">
           Paraphrase
         </h1>
-        <Form onSubmit={handleSubmitForm} loading={loading} />
-        <SuggestList loading={loading} suggestions={data?.suggestions} onClear={onClearSuggestions} />
+        <Form
+          onSubmit={handleSubmitForm}
+          loading={loading}
+        />
+        <SuggestList
+          loading={loading}
+          suggestions={data?.suggestions}
+          onClear={onClearSuggestions}
+        />
         {
           error !== null
             ? <div className="text-red-500">

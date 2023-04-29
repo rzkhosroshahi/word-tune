@@ -54,14 +54,14 @@ export const Form = (props: FormProps) => {
       <button
         type="submit"
         disabled={loading}
-        className="w-[100%] flex align-middle justify-center outline-0 border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0 rounded-lg bg-violet-800 rounded-md text-white dark:text-slate-300 dark:bg-slate-800"
+        className="w-[100%] min-h-[38px] flex items-center justify-center outline-0 border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0 rounded-lg bg-violet-800 rounded-md text-white dark:text-slate-300 dark:bg-slate-800 disabled:bg-violet-500 dark:disabled:bg-slate-500 "
       >
         {
           loading
             ? <Spinner />
-            : null
+            : <span>Paraphrase</span>
         }
-        Paraphrase
+
       </button>
     </form>
   )

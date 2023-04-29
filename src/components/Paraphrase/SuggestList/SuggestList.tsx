@@ -17,7 +17,7 @@ export const SuggestList = ({ loading, suggestions, onClear }: SuggestListProps)
     <div className="flex flex-col gap-3 mt-4">
       {
         suggestions
-          ? <span className="text-xs py-1" onClick={onClear}>Clear</span>
+          ? <span className="text-xs py-1 cursor-pointer select-none" onClick={onClear}>Clear</span>
           : null
       }
       {
