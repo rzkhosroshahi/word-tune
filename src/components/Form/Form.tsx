@@ -30,7 +30,6 @@ export const Form = (props: FormProps) => {
     }
   }, [props.sentenceMode])
 
-  console.log('splitText >>', splitText)
   const handleSubmitForm = (e?: FormEvent<HTMLFormElement>) => {
     e?.preventDefault()
     if (!textArea.current || !textArea.current.value) {
@@ -140,7 +139,11 @@ export const Form = (props: FormProps) => {
                 disableNext={!splitText.length || splitText.length - 1 === index}
                 disablePrev={index === 0}
               />
-            : <TopToolbar onPaste={handlePasteText} onClear={handleClearText} />
+            : <TopToolbar
+                onPaste={handlePasteText}
+                onClear={handleClearText}
+                onCopy={handleCopyText}
+            />
         }
         <textarea
           ref={textArea}
