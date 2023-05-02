@@ -24,6 +24,13 @@ export const Form = (props: FormProps) => {
     }
   }, [improvedSentence])
 
+  useEffect(() => {
+    if (!props.sentenceMode) {
+      resetAfterSentenceModeEnd()
+    }
+  }, [props.sentenceMode])
+
+  console.log('splitText >>', splitText)
   const handleSubmitForm = (e?: FormEvent<HTMLFormElement>) => {
     e?.preventDefault()
     if (!textArea.current || !textArea.current.value) {
@@ -37,7 +44,7 @@ export const Form = (props: FormProps) => {
   }
   const splitInitiallyTextsInSentenceMode = () => {
     if (textArea.current && textArea.current.value) {
-      const textSplit = textArea.current.value.split(/[.\n]/gi).filter((s) => s !== '')
+      const textSplit = textArea.current.value.split(/[.\n]/gi).filter((s) => s.trim() && s !== '')
       setTextSplit(textSplit)
       onSubmit(textSplit[0], style)
       selectTextInTextarea(textSplit[0])

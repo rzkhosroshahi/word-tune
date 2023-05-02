@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+// @ts-ignore
 import * as Switch from '@radix-ui/react-switch'
 import { useApi } from '../../hooks/useApi'
 import { ParaphraseTypes } from './Paraphrase.types'
