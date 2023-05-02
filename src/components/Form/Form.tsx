@@ -44,7 +44,10 @@ export const Form = (props: FormProps) => {
   }
   const splitInitiallyTextsInSentenceMode = () => {
     if (textArea.current && textArea.current.value) {
-      const textSplit = textArea.current.value.split(/[.\n]/gi).filter((s) => s.trim() && s !== '')
+      const textSplit =
+        textArea.current.value.split(/[.\n|?]/gi)
+          .filter((s) => s.trim() && s !== '')
+
       setTextSplit(textSplit)
       onSubmit(textSplit[0], style)
       selectTextInTextarea(textSplit[0])
