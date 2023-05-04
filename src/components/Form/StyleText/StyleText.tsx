@@ -1,33 +1,48 @@
 import React from 'react'
 import clsx from 'clsx'
-import { StyleTextProps, TextStyles, TextStylesNames } from './StyleText.types'
-import { BriefcaseIcon, EyeDropperIcon, NewspaperIcon, SparklesIcon } from '@heroicons/react/24/outline'
-import { objectKeys } from '../../../utils'
+import { stylesType, StyleTextProps } from './StyleText.types'
+import Icon from '../../Icons'
 
-type IconsTypes = React.ForwardRefExoticComponent<React.PropsWithoutRef<React.SVGProps<SVGSVGElement>>>;
-
-const Icons: Record<TextStylesNames, IconsTypes> = {
-  general: SparklesIcon,
-  formal: BriefcaseIcon,
-  casual: NewspaperIcon,
-  short: EyeDropperIcon
-}
+const styles: stylesType[] = [
+  {
+    type: 'general',
+    icon: 'generalIcon'
+  },
+  {
+    type: 'casual',
+    icon: 'casualIcon'
+  },
+  {
+    type: 'formal',
+    icon: 'formalIcon'
+  },
+  {
+    type: 'short',
+    icon: 'shortenIcon'
+  },
+  {
+    type: 'long',
+    icon: 'expandIcon'
+  }
+]
 
 export const StyleText = ({ selected, onSelect }: StyleTextProps) => {
   return (
     <div className="w-full flex align-middle justify-center my-4 gap-2">
       {
-        objectKeys(TextStyles).map((key) => {
-          const IconComponent = Icons[key]
+        styles.map((style) => {
           return (
             <button
-              key={key}
+              key={style.type}
               type="button"
-              title={key}
-              className={getClassNames(selected === key)}
-              onClick={() => onSelect(key)}
+              title={style.type}
+              className={getClassNames(selected === style.type)}
+              onClick={() => onSelect(style.type)}
             >
-              <IconComponent width={20} />
+              <Icon name={style.icon} />
+              <span className="hidden text-sm md:block">
+                {style.type}
+              </span>
             </button>
           )
         })
