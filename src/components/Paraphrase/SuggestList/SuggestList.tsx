@@ -9,7 +9,7 @@ export const SuggestList = (props: SuggestListProps) => {
   const [copy] = useCopyToClipboard()
 
   const handleClickOnText = (text: string) => {
-    if (sentenceMode) {
+    if (sentenceMode && !loading) {
       onClick(text)
       return
     }
@@ -24,9 +24,6 @@ export const SuggestList = (props: SuggestListProps) => {
         suggestions
           ? <div className="flex justify-between items-center py-1 cursor-pointer select-none font-bold" onClick={onClear}>
               <p>Suggestions</p>
-              <span className="text-xs cursor-pointer">
-                X Clear
-              </span>
             </div>
           : null
       }
